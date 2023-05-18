@@ -28,7 +28,6 @@
                             </Image>
                         </Grid>
                     </StackPanel>
-
                     <RadioButton x:Name="RadST" Padding="5" VerticalContentAlignment="Center" 
                                  Content="Structural Technologies" 
                                  Checked="RadST_Checked_1" 
@@ -102,6 +101,13 @@
                                  CSS Shop drawing Manual Page
                             </Hyperlink>
                         </TextBlock>
+                        <ComboBox>
+                            <ComboBoxItem FontSize="20">CONTRACTOR NAME</ComboBoxItem>
+                            <ComboBoxItem FontSize="20" Background="RoyalBlue" Foreground="White">Restruction</ComboBoxItem>
+                            <ComboBoxItem FontSize="20" Background="DarkBlue" Foreground="White">S.P.S</ComboBoxItem>
+                            <ComboBoxItem FontSize="20" Background="DarkRed" Foreground="White">Pullman</ComboBoxItem>
+                            <ComboBoxItem FontSize="20" Background="LightSteelBlue" Foreground="DodgerBlue">VSL</ComboBoxItem>
+                        </ComboBox>
                     </StackPanel>
                 </StackPanel>
             </TabItem>

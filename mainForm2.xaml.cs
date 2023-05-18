@@ -288,9 +288,9 @@ namespace CSS_Palette
                     double varfeet, varin;
                     varfeet = Double.Parse(txtFeet.Text);
                     varin = Double.Parse(txtInch.Text);
-                    lblFeet.Content = Math.Round((varfeet + varin / 12), 2).ToString();
+                    lblFeet.Content = Math.Round(varfeet + varin / 12, 2).ToString();
                     //LbFeetRsult.Text = "Your result of: " + varfeet + "'" + "-" + varin + "''";             
-                    lblInch.Content = Math.Round((varfeet * 12 + varin), 2).ToString() + "''";
+                    lblInch.Content = Math.Round(varfeet * 12 + varin, 2).ToString() + "''";
                     txtFeet.Clear();
                     txtInch.Clear();
                 }
@@ -300,7 +300,6 @@ namespace CSS_Palette
                 }    
             }  
         }
-
         private void txtInch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -326,6 +325,12 @@ namespace CSS_Palette
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ContractorName win2 = new ContractorName();         
+            win2.Visibility = Visibility.Visible;
         }
     }
 }
