@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="CSS_Palette.mainForm2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CSS_Palette"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="257">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+        <TabControl HorizontalAlignment="Left"  Margin="10,10,10,10" 
+                    VerticalAlignment="Top" 
+                    Background="Transparent">
+            <TabItem Background="Orange" Header="SCALE" FontSize="15">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel>
+                        <Grid>
+                            <Image x:Name="SST_image" Width="80" Height="60" >
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="90"
+                                         UriSource="S:\@FRP\_SST-ST Alliance\7. Logo\113400sstlogo.jpg"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                            <Image x:Name="ST_image" Width="80" Height="60" >
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="90"
+                                         UriSource="S:\@FRP\_SST-ST Alliance\7. Logo\ST Logo.jpg"></BitmapImage>
+                                </Image.Source>
+                            </Image>
+                        </Grid>
+                    </StackPanel>
+
+                    <RadioButton x:Name="RadST" Padding="5" VerticalContentAlignment="Center" 
+                                 Content="Structural Technologies" 
+                                 Checked="RadST_Checked_1" 
+                                 Unchecked="RadST_Unchecked"
+                                 Foreground="Blue"
+                                 FontWeight="Bold"
+                                 Margin="10 0 0 0"></RadioButton>
+                    <RadioButton x:Name="RadSST" Padding="5" VerticalContentAlignment="Center" 
+                                 Content="Simpson Strong Tie" 
+                                 Checked="RadSST_Checked_1" 
+                                 Unchecked="RadSST_Unchecked_1"
+                                 Foreground="Orange"
+                                 FontWeight="Bold"
+                                 Margin="10 0 0 0"></RadioButton>
+                    <DataGrid x:Name="DatagridXAML" AlternatingRowBackground="Gray" 
+                              HorizontalScrollBarVisibility="Disabled"
+                              Background="Transparent"
+                              IsReadOnly="True">
+                        <!--Font and color/Style of column Heading-->
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="Orange" />
+                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Scale" Binding="{Binding Scaleid}" Width="*"/>
+                            <DataGridTextColumn Header="Style" Binding="{Binding Styleid}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock Margin="10 0 0 0" Padding="0 10 0 10" Foreground="White" TextDecorations="Underline">Feet - Inch Converter</TextBlock>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Feet" Margin="10 0 10 0" Padding="0 0 0 10"></TextBlock>
+                            <TextBlock Grid.Column="1" Text="Inch" Margin="10 0 10 0" Padding="0 0 0 10"></TextBlock>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" TextAlignment="Center" x:Name="txtFeet" Grid.Column="0" Margin="10 0 10 10" KeyDown="txtFeet_KeyDown_1"></TextBox>
+                            <TextBox PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" TextAlignment="Center" x:Name="txtInch" Grid.Column="1" Margin="10 0 10 10" KeyDown="txtInch_KeyDown"></TextBox>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="To Feet" Margin="10 0 0 0"></Label>
+                            <Label x:Name="lblFeet" Foreground="Orange" Grid.Column="1" Content="Result Feet" Margin="10 0 0 0"></Label>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="To Inch" Margin="10 0 0 0"></Label>
+                            <Label x:Name="lblInch" Foreground="Orange" Grid.Column="1" Content="Result Inch" Margin="10 0 0 0"></Label>
+                        </Grid>
+                        <TextBlock HorizontalAlignment="Center" Padding="0 10 0 10">
+                            <Hyperlink NavigateUri="https://strongtie.atlassian.net/wiki/spaces/CSSVN/pages/5410324773/2022-CSS+Shop+Drawing+Manual+Update+Draft"
+                                       RequestNavigate="Hyperlink_RequestNavigate"
+                                       Foreground="DeepSkyBlue"
+                                       FontStyle="Italic">                                      
+                                 CSS Shop drawing Manual Page
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Background="Black" Header="ANCHOR DIA." FontSize="15" Foreground="#ccc">
+                <Grid Background="Gray">
+                    <DataGrid x:Name="DatagridACXAML" Margin="0 10 0 0" VerticalAlignment="Top" IsReadOnly="True" 
+                              AlternatingRowBackground="LightGray"
+                              Background="Transparent">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="Orange" />
+                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Anchor" Binding="{Binding Anchorid}" Width="130"/>
+                            <DataGridTextColumn Header="Diameter" Binding="{Binding Diaid}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Background="Orange" Header="COATING" FontSize="15">
+                <Grid Background="Gray">
+                    <DataGrid x:Name="DatagridCoatingXAML" Margin="0 10 0 0" VerticalAlignment="Top" IsReadOnly="True" 
+                              AlternatingRowBackground="LightGray"
+                              Background="Transparent">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="Orange" />
+                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Elements" Binding="{Binding Elementid}" Width="120"/>
+                            <DataGridTextColumn Header="THK." Binding="{Binding THKid}" Width="*"/>
+                            <DataGridTextColumn Header="Extend" Binding="{Binding Extendid}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
