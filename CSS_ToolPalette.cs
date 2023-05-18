@@ -44,10 +44,6 @@ namespace CSS_Palette
             palette.Visible = true;
             palette.Dock = DockSides.Left;
             palette.RolledUp = true;
-
-  
         }
-        
-        
     }
 }
