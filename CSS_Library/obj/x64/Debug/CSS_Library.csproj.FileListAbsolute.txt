@@ -1,0 +1,11 @@
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\bin\x64\Debug\CSS_Library.dll
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\bin\x64\Debug\CSS_Library.pdb
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library.csproj.AssemblyReference.cache
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSSLibraryUI.g.cs
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library_MarkupCompile.cache
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library_MarkupCompile.lref
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSSLibraryUI.baml
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library.g.resources
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library.csproj.CoreCompileInputs.cache
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library.dll
+D:\4.PERSONAL\5.CODING\6.1CSS_Cad_Library\CSS_CAD LIB\CSS_Library\obj\x64\Debug\CSS_Library.pdb
