@@ -5,10 +5,119 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CSS_Library"
              mc:Ignorable="d" 
-             d:DesignHeight="850" d:DesignWidth="800">
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+             d:DesignHeight="850" d:DesignWidth="900"
+             FontFamily="Arial">
+    <Grid Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
         <Border Padding="10">
-            <TextBlock FontSize="25" Foreground="White">Refine Results</TextBlock>
+            <StackPanel>
+                <Grid Height="800">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="310"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <Border Grid.Column="0" Background="DarkSlateBlue">
+                            <TextBlock Foreground="White" FontSize="20" Padding="15 15 0 15">Refine Results</TextBlock>
+                        </Border>
+                        <Border>
+                            <TreeView Background="LightYellow" BorderThickness="0" Height="787">
+                                <TreeView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type TreeViewItem}">
+                                        <Setter Property="IsExpanded" Value="True"></Setter>
+                                    </Style>
+                                </TreeView.ItemContainerStyle>
+                                <TreeViewItem Header="Search by Keyword" FontSize="18" FontWeight="Bold" Margin="0 15 0 15">
+                                    <Grid Margin="0 20 0 10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Grid.Column="0" Width="200" Height="35" BorderBrush="Black"></TextBox>
+                                        <Button Grid.Column="1">Search</Button>
+                                    </Grid>
+                                </TreeViewItem>
+                                <TreeViewItem Header="Category" FontSize="18" FontWeight="Bold" Height="641">
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 25 0 15" FontWeight="Light">Typical Details</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Anchor Details</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Beam Strengthening</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Column Strengthening</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Wall Strengthening</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Opening</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Slab Strengthening</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Chord</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 15" FontWeight="Light">Diaphragm</CheckBox>
+                                    <CheckBox VerticalContentAlignment="Center" Margin="0 15 0 370" FontWeight="Light">FRCM</CheckBox>
+                                </TreeViewItem>
+                            </TreeView>
+                        </Border>
+                    </StackPanel>
+                    <Grid Grid.Column="1" Margin="25 0 0 0">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" Foreground="Gray">Your Selections</TextBlock>
+                                <ComboBox Grid.Column="0" Grid.Row="1" FontSize="15" Margin="0 0 0 10">
+                                    <ComboBoxItem>Typical Details</ComboBoxItem>
+                                </ComboBox>
+                                <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Foreground="Gray" TextAlignment="Center">Refined Results <LineBreak></LineBreak> Displayed Below</TextBlock>
+                                <Button Grid.Column="2" Grid.Row="0" FontSize="15" Padding="0 10 0 10" Foreground="White" Background="Gray" Width="100" HorizontalAlignment="Right" Margin="0 0 0 8">
+                                    <Button.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="5"></Setter>
+                                        </Style>
+                                    </Button.Resources> Grid View
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="1" FontSize="15" Padding="0 10 0 10" Width="100" HorizontalAlignment="Right" Margin="0 0 0 8">
+                                    <Button.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="5"></Setter>
+                                        </Style>
+                                    </Button.Resources>
+                                    List View
+                                </Button>
+                                <ScrollViewer Margin="0 10 0 0" Grid.Row="2" Grid.ColumnSpan="3" Background="#FFF1F1F1" Height="700">
+                                    <StackPanel>
+                                        <TextBlock Text="Detail Store" HorizontalAlignment="Center" Margin="10" FontSize="15"></TextBlock>
+                                        <StackPanel Margin="20 0">
+                                            <ItemsControl x:Name="ListViewProduct" ItemsSource="{Binding Product}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Border Margin="10" Width="350" Height="270">
+                                                            <StackPanel>
+                                                                <Border Width="350" Height="210" CornerRadius="5" Margin="5">
+                                                                    <Image Source="{Binding Image}" MouseLeftButtonDown="InsertDetail_Click"></Image>
+                                                                </Border>
+                                                                <TextBlock Margin="5" Text="{Binding Value, StringFormat={}{0:C}}" FontSize="18"></TextBlock>
+                                                                <TextBlock Margin="5 0" Text="DWG"></TextBlock>
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel>
+                                                            
+                                                        </WrapPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>

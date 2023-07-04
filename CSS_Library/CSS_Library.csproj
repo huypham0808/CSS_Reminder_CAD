@@ -77,10 +77,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C1.cs" />
     <Compile Include="CSSLibraryUI.xaml.cs">
       <DependentUpon>CSSLibraryUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="CSS_Library.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TYP. FPS COATING - JOIST.png" />
+    <Content Include="TYP. FPS COATING - SLAB.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

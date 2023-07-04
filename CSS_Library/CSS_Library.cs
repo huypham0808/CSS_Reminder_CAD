@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Windows;
-using System.Windows;
 using Autodesk.AutoCAD.Windows.ToolPalette;
 
 namespace CSS_Library
@@ -45,9 +45,12 @@ namespace CSS_Library
             }
             palette.Visible = true;
             palette.DockEnabled = (DockSides)(DockSides.Left | DockSides.Right);
+            palette.Size = new System.Drawing.Size(780, 1200);
             palette.Dock = DockSides.Left;
             palette.RolledUp = true;
             //palette.AutoRollUp = true;
         }
+        
+
     }
 }
