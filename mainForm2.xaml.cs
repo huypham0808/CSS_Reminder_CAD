@@ -32,7 +32,7 @@ namespace CSS_Palette
             string b = "''";
             Anchor_Dia Dong_1A = new Anchor_Dia();
             Dong_1A.Anchorid = "CSS-CA25";
-            Dong_1A.Diaid = "1/4"+b;
+            Dong_1A.Diaid = "1/4" + b;
 
             Anchor_Dia Dong_2A = new Anchor_Dia();
             Dong_2A.Anchorid = "CSS-CA37";
@@ -74,38 +74,38 @@ namespace CSS_Palette
             Dong_11A.Anchorid = "CSS-CA150";
             Dong_11A.Diaid = "1-1/2" + b;
 
-            DatagridACXAML.Items.Add(Dong_1A);    
-            DatagridACXAML.Items.Add(Dong_2A);    
-            DatagridACXAML.Items.Add(Dong_3A);    
-            DatagridACXAML.Items.Add(Dong_4A);    
-            DatagridACXAML.Items.Add(Dong_5A);    
-            DatagridACXAML.Items.Add(Dong_6A);    
-            DatagridACXAML.Items.Add(Dong_7A);    
-            DatagridACXAML.Items.Add(Dong_8A);    
-            DatagridACXAML.Items.Add(Dong_9A);    
-            DatagridACXAML.Items.Add(Dong_10A);    
+            DatagridACXAML.Items.Add(Dong_1A);
+            DatagridACXAML.Items.Add(Dong_2A);
+            DatagridACXAML.Items.Add(Dong_3A);
+            DatagridACXAML.Items.Add(Dong_4A);
+            DatagridACXAML.Items.Add(Dong_5A);
+            DatagridACXAML.Items.Add(Dong_6A);
+            DatagridACXAML.Items.Add(Dong_7A);
+            DatagridACXAML.Items.Add(Dong_8A);
+            DatagridACXAML.Items.Add(Dong_9A);
+            DatagridACXAML.Items.Add(Dong_10A);
             DatagridACXAML.Items.Add(Dong_11A);
 
             //FPS Coating
             String c = "''";
             Element_FPS_Coating Dong1B = new Element_FPS_Coating();
             Dong1B.Elementid = "SLAB";
-            Dong1B.THKid = "1"+c;
-            Dong1B.Extendid = "5"+c;
+            Dong1B.THKid = "1" + c;
+            Dong1B.Extendid = "5" + c;
 
             Element_FPS_Coating Dong2B = new Element_FPS_Coating();
             Dong2B.Elementid = "JOIST";
             Dong2B.THKid = "1" + c;
-            Dong2B.Extendid = "6"+c;
+            Dong2B.Extendid = "6" + c;
 
             Element_FPS_Coating Dong3B = new Element_FPS_Coating();
             Dong3B.Elementid = "BEAM";
-            Dong3B.THKid = "3/4"+c;
+            Dong3B.THKid = "3/4" + c;
             Dong3B.Extendid = "6" + c;
 
             Element_FPS_Coating Dong4B = new Element_FPS_Coating();
             Dong4B.Elementid = "COLUMN";
-            Dong4B.THKid = "3/4"+c;
+            Dong4B.THKid = "3/4" + c;
             Dong4B.Extendid = " ";
 
             DatagridCoatingXAML.Items.Add(Dong1B);
@@ -117,7 +117,7 @@ namespace CSS_Palette
         {
             public string Scaleid { get; set; }
             public string Styleid { get; set; }
-          
+
         }
         public class Anchor_Dia
         {
@@ -283,7 +283,7 @@ namespace CSS_Palette
         {
             if (e.Key == Key.Enter)
             {
-                if(txtInch.Text != "")
+                if (txtInch.Text != "")
                 {
                     double varfeet, varin;
                     varfeet = Double.Parse(txtFeet.Text);
@@ -297,14 +297,14 @@ namespace CSS_Palette
                 else
                 {
                     MessageBox.Show("Please fill INCH value = 0 if it has not value");
-                }    
-            }  
+                }
+            }
         }
         private void txtInch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                if(txtFeet.Text != "")
+                if (txtFeet.Text != "")
                 {
                     double varfeet, varin;
                     varfeet = Double.Parse(txtFeet.Text);
@@ -326,11 +326,5 @@ namespace CSS_Palette
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
-       
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ContractorName win2 = new ContractorName();         
-            win2.Visibility = Visibility.Visible;
-        }
-    }
+     }
 }

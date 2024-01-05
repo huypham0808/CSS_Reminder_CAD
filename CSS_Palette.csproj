@@ -122,7 +122,9 @@
     <Compile Include="mainForm2.xaml.cs">
       <DependentUpon>mainForm2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="mainForm2Base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilsMethod\UpdateMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="mainForm2.xaml">
